@@ -1,0 +1,289 @@
+/* upper container thier sub-containers are handled accordingly in other 
+of by the html structure. animation, hover and other effect are 
+placed towards the end of this css.*/
+
+body, html{
+    padding: 0px;
+    margin: auto;
+    background-color: rgb(79, 92, 87);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+
+/*main-container is a grid display that contan three row also
+some of the rowws contain grids or flex system.*/
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 1px;
+    grid-template-areas: 
+    "logo-services-container logo-services-container logo-services-container"
+    "contents-container contents-container contents-container"
+    " footer footer footer";
+    /*background-color:wheat; */
+}
+
+
+/* .logo-services-container sub section of the main-container start here
+ also has a grid property*/
+
+.logo-services-container{
+    grid-area: logo-services-container;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-gap: 10px;
+
+    grid-template-areas: 
+    "logo logo"
+    "products-services-others products-services-others";
+    background-color: rgb(79, 92, 87); 
+  
+}
+
+
+/* this is a sub of .logo-services-container, is hold a display flex
+property for displaying the product..services..and other stuff*/
+.logo{
+    padding: 130px;
+    grid-area: logo;
+    font-family: fantasy;
+    font-size: 60px;
+    background-image: url(images/logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: red;
+   
+}
+ 
+.products-services-others{
+    grid-area: products-services-others;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+
+    grid-gap: 20px;
+    grid-template-areas:
+    "product services others";
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    
+}
+
+.product{
+    grid-area: product;
+}
+
+.services{
+    grid-area: services;
+}
+
+.others{
+    grid-area: others;
+}
+/* logo-services-container or first section of main-container ends here */
+
+  
+
+/* contents-container is the second row of the main-container grid
+this is where brands, selected product and it decription will
+be displayed */
+.contents-container{
+    grid-area: contents-container;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+
+
+    grid-template-areas: 
+    "content-brand-list content-brand-product content-product-description";
+    background-color: white;
+    /* background-color: red; */
+}
+.content-brand-list{
+    grid-area: content-brand-list;
+    background-color:beige;
+
+    
+}
+
+
+/* this section hold the main-product display and specification summary
+this is a second child div of contents-container*/
+.content-brand-product{
+    grid-area:  content-brand-product;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 1px;
+
+    grid-template-areas:
+    "main-product"
+    "main-product-spec";
+    
+}
+
+.main-product{
+    grid-area: main-product;
+    
+}
+
+/*this section hold the main-product and .main-product-spec. */
+.main-product-spec{
+    grid-area: main-product-spec;
+} 
+
+
+
+.content-product-description{
+    grid-area: content-product-description;
+}/* middlesection of main-container ends here */
+
+
+
+
+/* the third and the last section of the main-container grid. contain two
+section. the first hold a flex displat and the last displa the copyright
+and the web designer info*/
+
+.footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-gap: 1px;
+
+    grid-template-areas:
+    "view-more-also view-more-also view-more-also view-more-also view-more-also view-more-also"
+    ". social-medias social-medias social-medias social-medias ."
+    ". main-footer-content main-footer-content main-footer-content main-footer-content .";
+
+    /* background-color: green; */
+}
+
+.view-more-also{
+    grid-area: view-more-also;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    grid-gap: 1px;
+
+    grid-template-areas:
+    ". product1 product2 product3 product4 product5 .";
+    background-color: white;
+    
+
+}
+
+.product1{
+    grid-area: product1;
+}
+    
+.product2{
+    grid-area: product2;
+}
+    
+.product3{
+    grid-area: product3;
+}
+    
+.product4{
+    grid-area: product4;
+}
+    
+.product5{
+    grid-area: product5;
+}
+    
+
+.social-medias{
+    grid-area: social-medias ;
+    margin-top: 60px 20px;
+    padding: 30px 10px;
+    background-color: black;
+
+}
+
+.main-footer-content{
+    grid-area: main-footer-content;
+    color:white;
+    font-size: 10px;
+    background-color: rgb(79, 92, 87);;
+    
+    padding-top: 30px; 
+    
+}
+
+/* footer or the last section of main-container ends here */
+.footer ul{
+    margin-top: 70px;
+}
+.footer ul li{
+    
+    
+    display: inline;
+    list-style: none;
+    padding: 40px 30px;
+    font-size: 15px;
+    color: blueviolet;
+    background-color: blanchedalmond;
+}
+
+/* the following section start more formation and animation */
+
+.list-headings{
+
+    background-color: gray;
+    color: brown;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.spec-list li{
+    list-style: none;
+    margin: 0px auto;
+    padding: 5px;
+    justify-content: center;
+}
+
+.services:hover, .product:hover, .others:hover{
+    
+    padding: 15px 20px;
+}
+.list-items{
+    padding: 5x 5px;
+    margin: 15px 80px;
+}
+.list-items:hover{
+    color:rgb(69, 42, 165);
+    background-color: rgb(227, 225, 238);
+    padding: 10px 5px;
+    border-radius: 50px 
+}
+
+.main-image{
+    padding-top: 70px;
+    padding-bottom: 0px;
+}
+
+#main-product-name{
+    padding-bottom: 0px;
+}
+
+.cancel{
+    color: #ff0000;
+}
